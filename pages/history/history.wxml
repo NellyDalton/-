@@ -1,0 +1,20 @@
+<view>
+  <picker mode="selector" range="{{['最近7天','最近30天']}}" value="{{range===30?1:0}}" bindchange="onRangeChange">
+    <view class="picker">{{range===30?'最近30天':'最近7天'}}</view>
+  </picker>
+
+  <view class="card" wx:for="{{list}}" wx:key="date" data-idx="{{index}}" bindtap="onPickDay">
+    <view>{{item.date}}</view>
+    <view>杯数：{{item.total_cups || 0}}</view>
+    <view>最高BAC区间：{{item.maxBacText}}</view>
+    <view>是否超标：{{item.over ? '是' : '否'}}</view>
+  </view>
+
+  <view class="card" wx:if="{{selected}}">
+    <view class="title">{{selected.date}} 详情</view>
+    <view wx:if="{{!selected.items || selected.items.length===0}}">无详细记录</view>
+    <view wx:for="{{selected.items}}" wx:key="id">
+      {{index+1}}. {{item.name || '未命名'}} × {{item.qty || 1}}（{{item.cups}}杯）
+    </view>
+  </view>
+</view>

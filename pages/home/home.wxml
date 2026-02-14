@@ -1,0 +1,30 @@
+<view>
+  <view class="card">今日标准杯：<text class="num">{{cups}}</text></view>
+  <view class="card">今日酒精克数：<text class="num">{{ethanol_g}}</text> g</view>
+  <view class="card">BAC区间：{{bacText}}</view>
+  <view class="card">预计清醒时间：{{soberText}}</view>
+  <view wx:if="{{needsProfile}}" class="warn">资料不足，请前往 settings 设置标准杯/体重/性别</view>
+
+  <view class="row">
+    <button size="mini" type="primary" bindtap="onStart">开始饮酒</button>
+    <button size="mini" type="default" bindtap="onEnd">结束饮酒</button>
+    <button size="mini" type="primary" bindtap="goAdd">添加饮品</button>
+  </view>
+  <view class="status">状态：{{isActive ? '进行中' : '已结束/未开始'}}</view>
+
+  <view class="card">
+    <view class="title">时间轴</view>
+    <view wx:if="{{timeline.length===0}}">今日暂无记录</view>
+    <view wx:for="{{timeline}}" wx:key="index" class="line">
+      <text class="t">{{item.time}}</text>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+
+  <view class="nav-list">
+    <navigator class="nav-item" url="/pages/bac/bac">BAC估算器</navigator>
+    <navigator class="nav-item" url="/pages/limit/limit">上限建议</navigator>
+    <navigator class="nav-item" url="/pages/history/history">历史记录</navigator>
+    <navigator class="nav-item" url="/pages/settings/settings">设置</navigator>
+  </view>
+</view>

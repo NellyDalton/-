@@ -1,0 +1,4 @@
+<view>
+  <view>import page</view>
+  <navigator class="nav-item" url="/pages/settings/settings">back to settings</navigator>
+</view>

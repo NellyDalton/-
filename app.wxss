@@ -1,0 +1,16 @@
+page {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.nav-item {
+  padding: 20rpx;
+  border: 1px solid #d9d9d9;
+  border-radius: 12rpx;
+}

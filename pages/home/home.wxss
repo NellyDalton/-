@@ -1,0 +1,8 @@
+.card { margin: 12rpx 0; padding: 16rpx; border: 1px solid #eee; border-radius: 10rpx; }
+.num { font-weight: 600; }
+.warn { color: #c33; margin-bottom: 12rpx; }
+.row { display: flex; gap: 10rpx; flex-wrap: wrap; margin: 12rpx 0; }
+.status { color: #666; margin-bottom: 12rpx; }
+.title { font-weight: 600; margin-bottom: 8rpx; }
+.line { margin: 8rpx 0; }
+.t { display: inline-block; width: 130rpx; color: #888; }

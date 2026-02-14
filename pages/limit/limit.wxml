@@ -1,0 +1,12 @@
+<view>
+  <view class="label">目标 BAC 上限</view>
+  <picker mode="selector" range="{{['0.03%','0.05%','0.08%']}}" value="{{ bac_limit_percent===0.03?0:(bac_limit_percent===0.05?1:2) }}" bindchange="onLimitChange">
+    <view class="picker">{{bac_limit_percent}}%</view>
+  </picker>
+
+  <view class="label">计划时长(小时)</view>
+  <input type="digit" value="{{plan_hours}}" bindinput="onPlanInput" />
+
+  <view class="card">建议上限杯数区间：{{rangeText}}</view>
+  <view class="card">今日占用比例：{{ratioText}}</view>
+</view>

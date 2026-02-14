@@ -1,0 +1,19 @@
+<view>
+  <view class="card">独立 BAC 估算器（默认读取今日会话）</view>
+  <view class="label">体重(kg)</view>
+  <input type="digit" data-key="weight_kg" value="{{weight_kg}}" bindinput="onInput" />
+
+  <view class="label">性别</view>
+  <picker mode="selector" range="{{['男','女','保守']}}" value="{{ sex==='male'?0:(sex==='female'?1:2) }}" bindchange="onSexChange">
+    <view class="picker">{{ sex==='male'?'男':(sex==='female'?'女':'保守') }}</view>
+  </picker>
+
+  <view class="label">饮酒后时长(h)</view>
+  <input type="digit" data-key="elapsed_hours" value="{{elapsed_hours}}" bindinput="onInput" />
+
+  <view class="label">酒精总克数(g)</view>
+  <input type="digit" data-key="ethanol_g" value="{{ethanol_g}}" bindinput="onInput" />
+
+  <view class="card">BAC区间：{{bacText}}</view>
+  <view class="disclaimer">免责声明：本工具仅供科普和风险提示，不能替代医学或执法检测结果。</view>
+</view>

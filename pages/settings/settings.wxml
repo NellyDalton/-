@@ -1,0 +1,16 @@
+<view>
+  <view class="label">标准杯克数</view>
+  <picker mode="selector" range="{{['10g','14g']}}" value="{{standard_drink_grams===14?1:0}}" bindchange="onStdChange">
+    <view class="picker">{{standard_drink_grams}}g</view>
+  </picker>
+
+  <view class="label">体重(kg)</view>
+  <input type="digit" value="{{weight_kg}}" bindinput="onWeightInput" />
+
+  <view class="label">性别</view>
+  <picker mode="selector" range="{{['男','女','保守']}}" value="{{ sex==='male'?0:(sex==='female'?1:2) }}" bindchange="onSexChange">
+    <view class="picker">{{ sex==='male'?'男':(sex==='female'?'女':'保守') }}</view>
+  </picker>
+
+  <view class="privacy">隐私说明：所有数据仅保存在本机本地存储，不会上传到网络、云函数或后端。</view>
+</view>
