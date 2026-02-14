@@ -1,0 +1,43 @@
+<view>
+  <view class="mode-row">
+    <button size="mini" type="{{mode==='sku' ? 'primary' : 'default'}}" data-mode="sku" bindtap="onModeChange">SKU</button>
+    <button size="mini" type="{{mode==='custom' ? 'primary' : 'default'}}" data-mode="custom" bindtap="onModeChange">自定义</button>
+  </view>
+
+  <view wx:if="{{mode==='sku'}}" class="block">
+    <view class="label">分类</view>
+    <picker mode="selector" range="{{categoryOptions}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+      <view class="picker">{{categoryOptions[categoryIndex] || '暂无分类'}}</view>
+    </picker>
+
+    <view class="label">品牌</view>
+    <picker mode="selector" range="{{brandOptions}}" value="{{brandIndex}}" bindchange="onBrandChange">
+      <view class="picker">{{brandOptions[brandIndex] || '暂无品牌'}}</view>
+    </picker>
+
+    <view class="label">SKU（常用会自动置顶）</view>
+    <picker mode="selector" range="{{skuOptions}}" range-key="name" value="{{skuIndex}}" bindchange="onSkuChange">
+      <view class="picker">{{skuOptions[skuIndex] ? (skuOptions[skuIndex].name + ' ' + skuOptions[skuIndex].volume_ml + 'ml / ' + skuOptions[skuIndex].abv + '%') : '暂无 SKU'}}</view>
+    </picker>
+
+    <view class="label">数量</view>
+    <input type="number" value="{{qty}}" bindinput="onQtyInput" />
+  </view>
+
+  <view wx:elif="{{mode==='custom'}}" class="block">
+    <view class="label">名称</view>
+    <input value="{{customName}}" bindinput="onCustomNameInput" placeholder="例如：自调鸡尾酒" />
+
+    <view class="label">ABV (%)</view>
+    <input type="digit" value="{{customAbv}}" bindinput="onCustomAbvInput" placeholder="例如：5" />
+
+    <view class="label">容量 (ml)</view>
+    <input type="digit" value="{{customVolume}}" bindinput="onCustomVolumeInput" placeholder="例如：330" />
+
+    <view class="label">数量</view>
+    <input type="number" value="{{customQty}}" bindinput="onCustomQtyInput" />
+  </view>
+
+  <button type="primary" bindtap="onAddTap">添加</button>
+  <view class="msg">{{message}}</view>
+</view>

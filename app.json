@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/add/add",
+    "pages/bac/bac",
+    "pages/limit/limit",
+    "pages/history/history",
+    "pages/board/board",
+    "pages/settings/settings",
+    "pages/import/import"
+  ],
+  "window": {
+    "navigationBarTitleText": "Mini Program",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "home"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "add"
+      },
+      {
+        "pagePath": "pages/board/board",
+        "text": "board"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "settings"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

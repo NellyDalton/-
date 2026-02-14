@@ -1,0 +1,5 @@
+<view>
+  <view>board page</view>
+  <navigator class="nav-item" url="/pages/history/history">go to history</navigator>
+  <navigator class="nav-item" url="/pages/home/home">back to home</navigator>
+</view>
